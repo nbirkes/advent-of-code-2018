@@ -1,5 +1,5 @@
 import { expect } from 'chai';
-import { countMatches, getChecksum, solvePartA } from "../02";
+import { countMatches, getChecksum, isMatch, removeDifferingCharacters, solvePartA, solvePartB } from "../02";
 
 describe('02', function () {
   describe('getChecksum', function() {
@@ -65,6 +65,47 @@ describe('02', function () {
         'ababab',
       ];
       const actual = solvePartA(input);
+      expect(actual).to.deep.equal(expected);
+    });
+  });
+  describe('isMatch', function() {
+    it('returns false', function () {
+      const expected = false;
+      const box1 = 'abcde';
+      const box2 = 'axcye';
+      const actual = isMatch(box1, box2, 1);
+      expect(actual).to.deep.equal(expected);
+    });
+    it('returns true', function () {
+      const expected = true;
+      const box1 = 'fghij';
+      const box2 = 'fguij';
+      const actual = isMatch(box1, box2, 1);
+      expect(actual).to.deep.equal(expected);
+    });
+  });
+  describe('removeDifferingCharacters', function() {
+    it('returns fgij', function () {
+      const expected = 'fgij';
+      const box1 = 'fghij';
+      const box2 = 'fguij';
+      const actual = removeDifferingCharacters(box1, box2);
+      expect(actual).to.deep.equal(expected);
+    });
+  });
+  describe('solvePartB', function() {
+    it('returns fgij', function() {
+      const expected = 'fgij';
+      const boxIds = [
+        'abcde',
+        'fghij',
+        'klmno',
+        'pqrst',
+        'fguij',
+        'axcye',
+        'wvxyz',
+      ];
+      const actual = solvePartB(boxIds);
       expect(actual).to.deep.equal(expected);
     });
   });
