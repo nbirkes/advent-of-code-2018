@@ -3,15 +3,38 @@ import { readFileSync } from 'fs';
 export async function day01(): Promise<void> {
   let rawInput = fetchInput(1);
   let parsedInput = parseInput(rawInput);
-  let answer = solve(0, parsedInput);
-  console.log('Answer', answer);
+
+  let partA = solvePartA(0, parsedInput);
+  console.log('Day 01 Part A', partA);
+
+  let partB = solvePartB(0, parsedInput);
+  console.log('Day 01 Part B', partB);
 }
 
-function solve(seed: number, changes: number[]): number {
+function solvePartA(seed: number, changes: number[]): number {
   return changes.reduce((acc: number, cur: number) => {
     acc = acc + cur;
     return acc;
   }, seed);
+}
+
+function solvePartB(seed: number, changes: number[]): number {
+  let frequencies: number[] = [];
+  let answer: number | undefined;
+  let frequency = seed;
+
+  while (answer === undefined) {
+    for (let change of changes) {
+      frequency = frequency + change;
+      if (frequencies.includes(frequency)) {
+        answer = frequency;
+        break;
+      }
+      frequencies.push(frequency);
+    }
+  }
+
+  return answer;
 }
 
 function parseInput(input: string): number[] {
