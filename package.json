@@ -1,0 +1,21 @@
+{
+  "name": "advent-of-code-2018",
+  "version": "1.0.0",
+  "description": "Advent of Code 2018",
+  "main": "dist/index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "start": "tsc && node dist/index",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Nathan Birkes <nbirkes@gmail.com>",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^10.5.1",
+    "typescript": "^2.9.2"
+  },
+  "dependencies": {
+  }
+}
