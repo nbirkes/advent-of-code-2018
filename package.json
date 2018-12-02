@@ -13,9 +13,13 @@
   "author": "Nathan Birkes <nbirkes@gmail.com>",
   "license": "ISC",
   "devDependencies": {
+    "@types/chai": "^4.1.7",
+    "@types/mocha": "^5.2.5",
     "@types/node": "^10.5.1",
+    "chai": "^4.2.0",
+    "mocha": "^5.2.0",
+    "ts-node": "^7.0.1",
     "typescript": "^2.9.2"
   },
-  "dependencies": {
-  }
+  "dependencies": {}
 }
