@@ -1,10 +1,12 @@
 import { day01 } from "./01";
 import { day02 } from "./02";
 import { dayString } from "./common";
+import { day03 } from "./03";
 
 const dayMap: Record<string, () => void> = {
   '01': day01,
   '02': day02,
+  '03': day03,
 };
 
 main().catch(console.error);
